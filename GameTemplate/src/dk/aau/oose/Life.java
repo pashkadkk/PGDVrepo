@@ -13,13 +13,13 @@ public class Life extends GameElement {
 		super(new Image ("assets/L.png"));
 		position=new Vector2f();
 		
-		// TODO Auto-generated constructor stub
+		// defines a sprite, that represents an image for each life (shown a "LIFE" on top right of the screen)
 	}
 	public void lifeChanged (int lostLife, Life [] life){
 	life[lostLife].destroy();	
+	// if life is changed - one life should be substracted, thus destroyed from screen. This function destroys one life if required.
 	}
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 	}
 }

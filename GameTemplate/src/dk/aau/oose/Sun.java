@@ -11,7 +11,7 @@ public class Sun extends SmallObjects {
 	    
 		public Sun (float x, float y) throws SlickException {
 			super (x,y,new Image ("assets/sun.png")); 
-		
+		// defines a sprite for 'sun' objects on the screen
 		}
 		
 		public void catchSmallObjects(Plant player) {
@@ -19,8 +19,9 @@ public class Sun extends SmallObjects {
 			if (this.interacts(player))
 			{player.points+=this.score;
 			 player.totalSuns--;
-			 
+			 // if sun/cherry interacts with player - amount of totalsuns left is decreased and player score is changed
 			this.destroy();
+			// sun/cherry is eaten thus destroyed
 		}
 			
 	}}

@@ -26,6 +26,7 @@ public abstract class SmallObjects extends GameElement {
 		for(GameElement ge: GameWorld.getGameObjects()){
 			if (ge instanceof Plant)
 				this.catchSmallObjects((Plant)ge);	
+			//checks whether objects belong to a plant and assigns them as 'smallobjects' objects
 		}
 		
 	}
