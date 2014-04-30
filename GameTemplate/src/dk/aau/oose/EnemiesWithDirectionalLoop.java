@@ -8,6 +8,7 @@ public interface EnemiesWithDirectionalLoop {
 
 	public Direction directions ();
 	public void directionLoop(Direction direction);
+	// calls for a directional loop from direction X and Y
 	
 	
 }
