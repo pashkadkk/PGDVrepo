@@ -14,8 +14,7 @@ public class Maze {
 
 	
 	public int [][] MAZE = {
-				/*	0 1 2 3 4 5 6 7 8 9  11  13  15  17  19  21  23  25  27  29  31  33  35  37  39  41
-				 * 					   10  12  14  16  18  20  22  24  26  28  30  32  34  36  38  40  
+				/*	A basic map from an "MAZE" array is defined"
 				 */
 			/*0*/	{2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2},
 			/*1*/	{2,2,2,2,2,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,2,2,2,2,2},
@@ -52,6 +51,7 @@ public class Maze {
 	};
 	
 	public void buildMaze() throws SlickException {
+		// a function for reading a "MAZE" array(a.k.a. map) and creating objects based on the numbers gathered from array
 		for (int i=0;i<=600;i+=20)
 			for (int j=0; j<=800; j+=20)		
 				{
@@ -63,23 +63,27 @@ public class Maze {
 						e.printStackTrace();
 					}
 					 GameWorld.add(sun);
+					 // if number in array is '0' - a sun is created
 					 break;
 				  case 1:
 					  Wall wall=new Wall(j,i);
 					  GameWorld.add(wall);
+					  // if number in array is '1' - a wall is created
 					  break;
 				  case 2:
 					  Grass grass=new Grass(j,i);
 					  GameWorld.add(grass);
+					  // if number in array is '2' - a grass i created
 					  break;
 				  case 3:
-					  SmallObjects scroll= null;
+					  SmallObjects cherry= null;
 						try {
-							scroll = new Cherry(j,i);
+							cherry = new Cherry(j,i);
 						} catch (SlickException e) {
 							e.printStackTrace();
 						}
-						 GameWorld.add(scroll);
+						 GameWorld.add(cherry);
+						 // if number in array is '3' - a cherry is created
 					  break;
 				  default: 
 		
@@ -93,13 +97,14 @@ public class Maze {
 		  zombie.position.x=400;
 		  zombie.position.y=220;
 		  GameWorld.add(zombie);
-		  
+		  // creates a superzombie and defines it's location
 		 for (int x=0;x<5;x++)
 		  {
 			  Zombie zombie1=new Zombie();
 				 zombie1.position.x=400;
 				 zombie1.position.y=240;
 				 GameWorld.add(zombie1);
+				 // created 5 zombies and defines their location
 		  }	
 	}
 		
@@ -107,7 +112,7 @@ public class Maze {
 
 	
 	public void updateMaze(){
-		//buildMaze();
+		// creates a maze
 		for (GameElement g: GameWorld.getGameObjects())
 				if (!(g instanceof Plant))
 				g.destroy();

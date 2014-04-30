@@ -15,14 +15,12 @@ public class Congratz extends GameElement{
 		position.x=x;
 		position.y=y;
 	
-		// TODO Auto-generated constructor stub
+		// defines a sprite that shows up whenever a player wins the game.
 	}
 
 
 	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
+	public void update() {		
 	}
 
 }
